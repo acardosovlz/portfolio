@@ -361,11 +361,23 @@
             
             <p id="modalDescripcion" class="text-slate-400 text-sm leading-relaxed mb-6"></p>
             
-            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-[11px] text-slate-500 mb-6 overflow-x-auto">
-                <span class="text-brandAccent">google.script.run</span><br>
-                &nbsp;&nbsp;.withSuccessHandler(<span class="text-emerald-400">renderizarVista</span>)<br>
-                &nbsp;&nbsp;.ejecutarFuncion(<span class="text-blue-400">'obtenerDatosSheets'</span>);
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-6">
+    <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 block mb-2">Impacto Operativo Estimado</span>
+    <div class="grid grid-cols-2 gap-4">
+        <div class="border-r border-slate-800 pr-2">
+            <div class="text-xs text-slate-400">Tiempo de proceso</div>
+            <div class="text-lg font-bold text-brandAccent flex items-center gap-1">
+                De 3 días <span class="text-xs font-normal text-slate-500">a</span> 5 min
             </div>
+        </div>
+        <div>
+            <div class="text-xs text-slate-400">Margen de Error</div>
+            <div class="text-lg font-bold text-emerald-400">
+                0% <span class="text-xs font-normal text-slate-500">(Blindado)</span>
+            </div>
+        </div>
+    </div>
+</div>
             
             <button onclick="cerrarModalDemo()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 rounded-lg transition-colors border border-slate-700">
                 Entendido.
