@@ -135,9 +135,66 @@
         });
     }
 </script>
-            <div class="bg-enterpriseCard p-6 rounded-xl border border-slate-800 text-center text-slate-500 py-12">
-                [Espacio para Demo 2: Dashboard KPIs]
+            <div class="bg-enterpriseCard rounded-xl border border-slate-800 text-left overflow-hidden flex flex-col justify-between shadow-xl transition-all hover:border-brandAccent/30">
+    <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+            <span class="text-xs text-slate-400 font-mono ml-2">dashboard_gerencial.html</span>
+        </div>
+        <span class="bg-sky-500/10 text-brandAccent text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-brandAccent/20 font-semibold tracking-wider">Métricas en Vivo</span>
+    </div>
+
+    <div class="p-5 flex-1 flex flex-col justify-between">
+        <div>
+            <h3 class="text-xl font-bold text-white tracking-tight">Dashboard Gerencial</h3>
+            <p class="text-xs text-slate-400 mt-1 mb-4">La salud financiera y operativa de tu negocio resumida en una sola pantalla, alimentada por tu equipo de trabajo.</p>
+            
+            <div class="grid grid-cols-2 gap-3 mb-4">
+                <div class="bg-slate-900/80 p-3 rounded border border-slate-800">
+                    <span class="text-[10px] uppercase tracking-wider text-slate-500 font-medium">Facturado Mes</span>
+                    <div class="text-base font-bold text-emerald-400 mt-0.5">$342,500 MXN</div>
+                </div>
+                <div class="bg-slate-900/80 p-3 rounded border border-slate-800">
+                    <span class="text-[10px] uppercase tracking-wider text-slate-500 font-medium">Proyectos Activos</span>
+                    <div class="text-base font-bold text-white mt-0.5">14 <span class="text-[10px] text-amber-500 font-normal">(3 Retrasados)</span></div>
+                </div>
             </div>
+
+            <div class="bg-slate-900/40 p-3 rounded border border-slate-800/80 space-y-3">
+                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono block">Eficiencia por Departamento:</span>
+                
+                <div>
+                    <div class="flex justify-between text-[11px] mb-1">
+                        <span class="text-slate-300 font-medium">Operaciones e Integración</span>
+                        <span class="text-brandAccent font-mono">92%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-brandAccent h-full rounded-full transition-all duration-1000" style="width: 92%"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between text-[11px] mb-1">
+                        <span class="text-slate-300 font-medium">Finanzas y Cobranza</span>
+                        <span class="text-emerald-400 font-mono">78%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-emerald-400 h-full rounded-full transition-all duration-1000" style="width: 78%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
+            <span class="text-[11px] text-slate-500 font-mono">Control Total KPI</span>
+            <button onclick="alert('¡Bum! En la fase final, este botón abrirá una ventana interactiva con gráficas avanzadas conectadas directamente a las hojas de cálculo de tus directores.')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20 hover:shadow-lg hover:shadow-brandAccent/10">
+                Ver Métricas
+            </button>
+        </div>
+    </div>
+</div>
             <div class="bg-enterpriseCard p-6 rounded-xl border border-slate-800 text-center text-slate-500 py-12">
                 [Espacio para Demo 3: LMS Multiempresa]
             </div>
