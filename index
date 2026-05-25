@@ -3,26 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio de Automatizaciones</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #e0e0e0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+    <title>Sistemas Internos y Automatización a la Medida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración de colores personalizados estilo KBS / Enterprise
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        enterpriseBg: '#0F172A',
+                        enterpriseCard: '#1E293B',
+                        brandAccent: '#38BDF8', /* Azul tecnológico */
+                        brandGold: '#F59E0B'    /* Toque premium */
+                    }
+                }
+            }
         }
-        h1 {
-            color: #ffcc00; /* Un toque de oro estilo KBS */
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-    </style>
+    </script>
 </head>
-<body>
-    <h1>Sistemas Web Internos - Próximamente</h1>
+<body class="bg-enterpriseBg text-slate-200 font-sans antialiased">
+
+    <header class="border-b border-slate-800 bg-enterpriseBg/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-lg font-bold tracking-wider text-white">
+                <span class="text-brandAccent">//</span> SYSTEMS<span class="text-brandAccent">.DEV</span>
+            </div>
+            <a href="#contacto" class="bg-slate-800 hover:bg-slate-700 text-white text-sm px-4 py-2 rounded-lg font-medium transition-colors border border-slate-700">
+                Diagnóstico Gratis
+            </a>
+        </div>
+    </header>
+
+    <section class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+        <span class="text-brandAccent font-semibold tracking-wider text-sm uppercase px-3 py-1 bg-brandAccent/10 rounded-full">Soluciones en la Nube de Google</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-6 tracking-tight leading-tight">
+            Transforma tus hojas de cálculo en <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent to-blue-400">Sistemas Web a la Medida</span>
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            Elimina los errores humanos, protege tu información confidencial y automatiza la operación de tu empresa utilizando la infraestructura que ya pagas. Sin licencias mensuales ocultas.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#demos" class="bg-brandAccent hover:bg-sky-500 text-slate-900 font-bold px-8 py-3 rounded-lg transition-all shadow-lg shadow-brandAccent/20">
+                Probar Demos en Vivo
+            </a>
+            <a href="#personalizacion" class="bg-enterpriseCard hover:bg-slate-800 text-white font-medium px-8 py-3 rounded-lg transition-all border border-slate-700">
+                ¿Cómo funciona a la medida?
+            </a>
+        </div>
+    </section>
+
+    <section id="demos" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-800">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-white">Interactúa con Aplicaciones Reales</h2>
+            <p class="text-slate-400 mt-2">Demos funcionales con interfaces web puras conectadas a procesos automatizados.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-enterpriseCard p-6 rounded-xl border border-slate-800 text-center text-slate-500 py-12">
+                [Espacio para Demo 1: Portal Anti-Excel]
+            </div>
+            <div class="bg-enterpriseCard p-6 rounded-xl border border-slate-800 text-center text-slate-500 py-12">
+                [Espacio para Demo 2: Dashboard KPIs]
+            </div>
+            <div class="bg-enterpriseCard p-6 rounded-xl border border-slate-800 text-center text-slate-500 py-12">
+                [Espacio para Demo 3: LMS Multiempresa]
+            </div>
+        </div>
+    </section>
+
+    <section id="personalizacion" class="bg-slate-900/50 py-16 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">No te adaptes al software. El software se adapta a ti.</h2>
+            <p class="text-slate-400 mb-6 max-w-2xl mx-auto">Selecciona el giro de tu empresa y observa cómo estructuramos un flujo web automatizado a la medida de tus necesidades:</p>
+            
+            <div class="bg-enterpriseCard p-8 rounded-xl border border-slate-800 max-w-3xl mx-auto min-h-[200px] flex items-center justify-center text-slate-500">
+                [Espacio para el Simulador Dinámico de Giros Comerciales]
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="max-w-3xl mx-auto px-6 py-20 text-center">
+        <h2 class="text-3xl font-bold text-white">¿Listo para eliminar el caos en tu oficina?</h2>
+        <p class="text-slate-400 mt-2 mb-8">Agenda una sesión de diagnóstico de 15 minutos sin costo. Analizamos tu archivo de Excel más pesado y te decimos cómo transformarlo en web.</p>
+        
+        <div class="bg-enterpriseCard p-8 rounded-xl border border-slate-800 text-left">
+            [Espacio para el Formulario de Prospección]
+        </div>
+    </section>
+
 </body>
 </html>
