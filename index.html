@@ -6,7 +6,6 @@
     <title>Sistemas Internos y Automatización a la Medida</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Configuración de colores personalizados
         tailwind.config = {
             theme: {
                 extend: {
@@ -60,54 +59,56 @@
         
         <div class="grid md:grid-cols-2 gap-8">
             
-            <div class="bg-enterpriseCard rounded-xl border border-brandAccent/40 text-left overflow-hidden flex flex-col justify-between shadow-[0_0_20px_rgba(56,189,248,0.15)] transition-all hover:border-brandAccent/80 relative">
-                <div class="absolute top-0 right-0 bg-brandAccent text-slate-900 text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">
-                    Propuesta Principal
-                </div>
+            <div class="bg-enterpriseCard rounded-xl border border-slate-800 text-left overflow-hidden flex flex-col justify-between shadow-xl transition-all hover:border-brandAccent/30">
                 <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <span class="w-3 h-3 rounded-full bg-red-500"></span>
                         <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
                         <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                        <span class="text-xs text-slate-400 font-mono ml-2">backoffice_restaurante.html</span>
+                        <span class="text-xs text-slate-400 font-mono ml-2">control_costos.html</span>
                     </div>
-                    <span class="bg-rose-500/10 text-rose-400 text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-rose-500/20 font-semibold tracking-wider mt-4 sm:mt-0">Control de Mermas</span>
+                    <span class="bg-rose-500/10 text-rose-400 text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-rose-500/20 font-semibold tracking-wider">Auditoría de Merma</span>
                 </div>
 
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-xl font-bold text-white tracking-tight">Costeo e Inventario Inteligente</h3>
-                        <p class="text-xs text-slate-400 mt-1 mb-4">Detecta robos hormiga y variaciones de precios al instante. Compara lo que se vendió en el punto de venta contra lo que realmente hay en el almacén.</p>
+                        <h3 class="text-xl font-bold text-white tracking-tight">Costeo e Inventario Crítico</h3>
+                        <p class="text-xs text-slate-400 mt-1 mb-4">Control de insumos de alto valor. Compara el stock teórico (ventas) contra el físico para detectar fugas de capital.</p>
                         
-                        <div class="bg-slate-900/80 p-3 rounded border border-slate-800 mb-3">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-[11px] font-medium text-white">Insumo Crítico: Arrachera</span>
-                                <span class="text-[10px] text-slate-500 font-mono">ID: INS-045</span>
+                        <div class="bg-slate-900/80 p-4 rounded border border-slate-800 mb-3 space-y-3">
+                            <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                                <span class="text-[11px] font-medium text-white italic">Insumo: Arrachera Marinada</span>
+                                <span class="text-[10px] text-slate-500 font-mono">SKU: RES-01</span>
                             </div>
-                            <div class="grid grid-cols-2 gap-2 text-[10px] mb-2">
-                                <div class="bg-slate-950 p-2 rounded border border-slate-800">
-                                    <span class="text-slate-500 block">Teórico (Según Ventas)</span>
-                                    <span class="text-white font-bold text-xs">15.5 kg</span>
-                                </div>
-                                <div class="bg-slate-950 p-2 rounded border border-slate-800">
-                                    <span class="text-slate-500 block">Físico (Refrigerador)</span>
-                                    <div class="flex items-center gap-1 mt-0.5">
-                                        <input type="number" id="stockFisico" value="14.0" class="w-14 bg-slate-800 border border-slate-700 rounded px-1 py-0.5 text-white outline-none focus:border-brandAccent" step="0.1">
-                                        <span class="text-slate-400">kg</span>
+                            
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-slate-950 p-2 rounded border border-slate-800 text-center">
+                                    <span class="text-[9px] text-slate-500 block uppercase">Costo kg</span>
+                                    <div class="flex items-center justify-center gap-0.5 mt-1">
+                                        <span class="text-[10px] text-slate-400">$</span>
+                                        <input type="number" id="costoInsumo" value="280" class="w-10 bg-transparent text-white font-bold text-xs outline-none text-center">
                                     </div>
                                 </div>
-                            </div>
-                            <button onclick="calcularMerma()" class="w-full bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 py-2 rounded border border-slate-700 transition-colors font-medium">Auditar Diferencia (Click aquí)</button>
-                            
-                            <div id="alertaMerma" class="mt-2 hidden p-2 rounded text-[10px] font-medium flex items-center justify-between border">
+                                <div class="bg-slate-950 p-2 rounded border border-slate-800 text-center">
+                                    <span class="text-[9px] text-slate-500 block uppercase">Teórico</span>
+                                    <span class="text-white font-bold text-xs block mt-1">15.5 kg</span>
                                 </div>
+                                <div class="bg-slate-950 p-2 rounded border border-slate-800 text-center">
+                                    <span class="text-[9px] text-slate-500 block uppercase">Físico</span>
+                                    <input type="number" id="stockFisico" value="14.0" class="w-full bg-slate-800 border border-slate-700 rounded mt-1 px-1 py-0.5 text-white text-xs font-bold text-center outline-none focus:border-brandAccent" step="0.1">
+                                </div>
+                            </div>
+
+                            <button onclick="calcularMerma()" class="w-full bg-brandAccent/10 hover:bg-brandAccent hover:text-slate-900 text-brandAccent text-[11px] py-2 rounded border border-brandAccent/20 transition-all font-bold uppercase tracking-wider">Ejecutar Conciliación</button>
+                            
+                            <div id="alertaMerma" class="mt-2 hidden p-3 rounded text-[11px] border"></div>
                         </div>
                     </div>
 
-                    <div class="mt-4 border-t border-slate-800 pt-4 flex items-center justify-between">
-                        <span class="text-[11px] text-slate-500 font-mono">Conectado a Google Sheets</span>
-                        <button onclick="abrirModalDemo('Back-Office para Restaurantes', 'Este módulo se conecta a tus hojas de cálculo de recetas e insumos. Permite a los gerentes registrar el stock real en 5 minutos desde su celular al cerrar turno, calculando mermas y costos al instante sin tocar fórmulas complejas.', 'https://acardosovlz.github.io/portfolio/favicon.ico')" class="bg-brandAccent hover:bg-sky-500 text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all shadow-lg shadow-brandAccent/20">
-                            Ver Impacto
+                    <div class="mt-2 border-t border-slate-800 pt-4 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-500 font-mono">Sincronizado con Sheets</span>
+                        <button onclick="abrirModalDemo('Sistema de Costeo y Merma', 'Esta herramienta permite auditar insumos críticos en segundos. Cruza la información de ventas con el inventario real para arrojar pérdidas financieras exactas por turno, permitiendo un control absoluto sobre el costo de materia prima.', 'https://acardosovlz.github.io/portfolio/favicon.ico')" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2 rounded transition-all border border-slate-700">
+                            Ficha Técnica
                         </button>
                     </div>
                 </div>
@@ -119,18 +120,18 @@
                         <span class="w-3 h-3 rounded-full bg-red-500"></span>
                         <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
                         <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                        <span class="text-xs text-slate-400 font-mono ml-2">portal_operativo.html</span>
+                        <span class="text-xs text-slate-400 font-mono ml-2">portal_juridico.html</span>
                     </div>
-                    <span class="bg-emerald-500/10 text-emerald-400 text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-emerald-500/20 font-semibold tracking-wider">Sheets DB</span>
+                    <span class="bg-emerald-500/10 text-emerald-400 text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-emerald-500/20 font-semibold tracking-wider">Seguridad de Datos</span>
                 </div>
 
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-xl font-bold text-white tracking-tight">Portal Operativo & Seguridad</h3>
-                        <p class="text-xs text-slate-400 mt-1 mb-4">Mapeo visual de un proceso real. Los usuarios operan aquí; la base de datos central permanece oculta y protegida.</p>
+                        <h3 class="text-xl font-bold text-white tracking-tight">Portal de Gestión Segura</h3>
+                        <p class="text-xs text-slate-400 mt-1 mb-4">Interfaz web para usuarios finales. Protege la integridad de su base de datos central impidiendo el acceso directo a Sheets.</p>
                         
                         <div class="flex gap-2 mb-3">
-                            <input type="text" id="buscarTramite" placeholder="Buscar trámite por cliente..." class="bg-slate-900 text-xs px-3 py-2 rounded border border-slate-700 w-full text-slate-200 focus:outline-none focus:border-brandAccent">
+                            <input type="text" id="buscarTramite" placeholder="Buscar registro..." class="bg-slate-900 text-xs px-3 py-2 rounded border border-slate-700 w-full text-slate-200 focus:outline-none focus:border-brandAccent">
                             <button onclick="simularFiltro()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2 rounded border border-slate-700 font-medium transition-colors">Filtrar</button>
                         </div>
 
@@ -139,7 +140,7 @@
                                 <thead>
                                     <tr class="bg-slate-900 text-slate-400 border-b border-slate-800 font-mono">
                                         <th class="p-2">ID</th>
-                                        <th class="p-2">Cliente / Registro</th>
+                                        <th class="p-2">Cliente / Expediente</th>
                                         <th class="p-2">Estatus</th>
                                     </tr>
                                 </thead>
@@ -147,7 +148,7 @@
                                     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30">
                                         <td class="p-2 font-mono text-brandAccent">#2026-01</td>
                                         <td class="p-2 font-medium text-white">Inmobiliaria Garza S.A.</td>
-                                        <td class="p-2"><span class="bg-amber-500/10 text-amber-400 px-1.5 py-0.5 rounded border border-amber-500/20 font-medium">En Revisión</span></td>
+                                        <td class="p-2"><span class="bg-amber-500/10 text-amber-400 px-1.5 py-0.5 rounded border border-amber-500/20 font-medium">Revisión</span></td>
                                     </tr>
                                     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30">
                                         <td class="p-2 font-mono text-brandAccent">#2026-02</td>
@@ -157,7 +158,7 @@
                                     <tr class="hover:bg-slate-800/30">
                                         <td class="p-2 font-mono text-brandAccent">#2026-03</td>
                                         <td class="p-2 font-medium text-white">Logística San Pedro</td>
-                                        <td class="p-2"><span class="bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded border border-blue-500/20 font-medium">Captura Inicial</span></td>
+                                        <td class="p-2"><span class="bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded border border-blue-500/20 font-medium">Captura</span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -165,8 +166,8 @@
                     </div>
 
                     <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
-                        <span class="text-[11px] text-slate-500 font-mono">Frontend: HTML/Tailwind</span>
-                        <button onclick="abrirModalDemo('Portal Operativo Anti-Excel', 'Esta interfaz es el puente seguro entre tu personal y la base de datos (Google Sheets). El cliente verá exactamente el flujo que definimos: Ingreso ➔ Validación ➔ Reporte Final.', 'https://acardosovlz.github.io/portfolio/favicon.ico')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20">
+                        <span class="text-[11px] text-slate-500 font-mono">Frontend: Tailwind</span>
+                        <button onclick="abrirModalDemo('Portal de Gestión Segura', 'Esta arquitectura web permite que su equipo trabaje sobre una interfaz controlada. Los usuarios pueden buscar y actualizar registros sin riesgo de borrar fórmulas o datos críticos en el archivo original.', 'https://acardosovlz.github.io/portfolio/favicon.ico')" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2 rounded transition-all border border-slate-700">
                             Ver Demo
                         </button>
                     </div>
@@ -179,44 +180,41 @@
                         <span class="w-3 h-3 rounded-full bg-red-500"></span>
                         <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
                         <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                        <span class="text-xs text-slate-400 font-mono ml-2">dashboard_gerencial.html</span>
+                        <span class="text-xs text-slate-400 font-mono ml-2">kpi_gerencial.html</span>
                     </div>
-                    <span class="bg-sky-500/10 text-brandAccent text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-brandAccent/20 font-semibold tracking-wider">Métricas</span>
+                    <span class="bg-sky-500/10 text-brandAccent text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-brandAccent/20 font-semibold tracking-wider">Business Intelligence</span>
                 </div>
 
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-xl font-bold text-white tracking-tight">Dashboard Gerencial</h3>
-                        <p class="text-xs text-slate-400 mt-1 mb-4">La salud financiera y operativa de tu negocio resumida en una sola pantalla, alimentada por tu equipo de trabajo.</p>
+                        <h3 class="text-xl font-bold text-white tracking-tight">Dashboard de Indicadores</h3>
+                        <p class="text-xs text-slate-400 mt-1 mb-4">Información resumida para la toma de decisiones. Visualice la salud financiera y operativa de su empresa en tiempo real.</p>
                         
                         <div class="grid grid-cols-2 gap-3 mb-4">
-                            <div class="bg-slate-900/80 p-3 rounded border border-slate-800">
-                                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-medium">Facturado Mes</span>
-                                <div class="text-base font-bold text-emerald-400 mt-0.5">$342,500 MXN</div>
+                            <div class="bg-slate-900/80 p-3 rounded border border-slate-800 text-center">
+                                <span class="text-[9px] uppercase tracking-wider text-slate-500 font-medium">Venta Mensual</span>
+                                <div class="text-sm font-bold text-emerald-400 mt-0.5">$342,500 MXN</div>
                             </div>
-                            <div class="bg-slate-900/80 p-3 rounded border border-slate-800">
-                                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-medium">Proyectos Activos</span>
-                                <div class="text-base font-bold text-white mt-0.5">14 <span class="text-[10px] text-amber-500 font-normal">(3 Retrasados)</span></div>
+                            <div class="bg-slate-900/80 p-3 rounded border border-slate-800 text-center">
+                                <span class="text-[9px] uppercase tracking-wider text-slate-500 font-medium">Proyectos Activos</span>
+                                <div class="text-sm font-bold text-white mt-0.5">14 Unidades</div>
                             </div>
                         </div>
 
-                        <div class="bg-slate-900/40 p-3 rounded border border-slate-800/80 space-y-3">
-                            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono block">Eficiencia Operativa:</span>
-                            <div>
-                                <div class="flex justify-between text-[11px] mb-1">
-                                    <span class="text-slate-300 font-medium">Operaciones</span>
-                                    <span class="text-brandAccent font-mono">92%</span>
-                                </div>
-                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                                    <div class="bg-brandAccent h-full rounded-full transition-all duration-1000" style="width: 92%"></div>
-                                </div>
+                        <div class="bg-slate-900/40 p-3 rounded border border-slate-800/80">
+                            <div class="flex justify-between text-[11px] mb-1">
+                                <span class="text-slate-300 font-medium">Eficiencia de Operación</span>
+                                <span class="text-brandAccent font-mono font-bold">92%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-brandAccent h-full rounded-full transition-all duration-1000" style="width: 92%"></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
-                        <span class="text-[11px] text-slate-500 font-mono">Control Total KPI</span>
-                        <button onclick="abrirModalDemo('Dashboard KPIs Gerencial', 'Visualización de datos avanzados. Al conectarlo, esta pantalla pintará gráficos interactivos consumiendo datos en vivo de tus hojas de cálculo.', 'http://googleusercontent.com/image_collection/image_retrieval/7512396139633076259')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20">
+                        <span class="text-[11px] text-slate-500 font-mono">Real-time Data</span>
+                        <button onclick="abrirModalDemo('Dashboard de Indicadores', 'Visualización dinámica de KPIs. El sistema procesa miles de filas de datos de sus departamentos y las resume en gráficos ejecutivos para una supervisión efectiva y rápida.', 'http://googleusercontent.com/image_collection/image_retrieval/7512396139633076259')" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2 rounded transition-all border border-slate-700">
                             Ver Detalles
                         </button>
                     </div>
@@ -229,39 +227,36 @@
                         <span class="w-3 h-3 rounded-full bg-red-500"></span>
                         <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
                         <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                        <span class="text-xs text-slate-400 font-mono ml-2">lms_enterprise.html</span>
+                        <span class="text-xs text-slate-400 font-mono ml-2">lms_automatizado.html</span>
                     </div>
-                    <span class="bg-amber-500/10 text-brandGold text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-brandGold/20 font-semibold tracking-wider">Automatización</span>
+                    <span class="bg-amber-500/10 text-brandGold text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-brandGold/20 font-semibold tracking-wider">RH Automatización</span>
                 </div>
 
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-xl font-bold text-white tracking-tight">Academia Interna Automática</h3>
-                        <p class="text-xs text-slate-400 mt-1 mb-4">Automatiza la inducción y capacitación del personal nuevo. Evalúa, mide el progreso y genera constancias.</p>
+                        <h3 class="text-xl font-bold text-white tracking-tight">Capacitación Automatizada</h3>
+                        <p class="text-xs text-slate-400 mt-1 mb-4">Reduzca el tiempo de inducción para nuevos empleados. El sistema evalúa conocimientos y genera certificados automáticamente.</p>
                         
-                        <div class="bg-slate-900/90 p-3 rounded border border-slate-800 space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-[11px] text-white font-medium">Módulo: Políticas y Procedimientos</span>
-                                <span class="text-[10px] text-slate-500 font-mono">Progreso: 66%</span>
+                        <div class="bg-slate-900/90 p-3 rounded border border-slate-800 space-y-2">
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-white font-medium italic">Módulo 1: Seguridad e Higiene</span>
+                                <span class="text-slate-500">66% Completo</span>
                             </div>
-                            <div class="space-y-1.5">
-                                <div class="flex items-center gap-2 text-[11px] text-emerald-400">
-                                    <span class="font-mono">✓</span> 1.1 Introducción y Reglas Básico
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2 text-[10px] text-emerald-400">
+                                    <span class="font-bold">✓</span> Introducción al EPP
                                 </div>
-                                <div class="flex items-center gap-2 text-[11px] text-emerald-400">
-                                    <span class="font-mono">✓</span> 1.2 Protocolo de Operación
-                                </div>
-                                <div class="flex items-center gap-2 text-[11px] text-slate-400 animate-pulse">
-                                    <span class="text-brandGold font-mono">➔</span> 1.3 Evaluación Final del Módulo
+                                <div class="flex items-center gap-2 text-[10px] text-slate-400">
+                                    <span class="text-brandGold font-bold italic">➔</span> Examen de Evaluación
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
-                        <span class="text-[11px] text-slate-500 font-mono">Backend: Google Apps Script</span>
-                        <button onclick="abrirModalDemo('LMS y Academia Automatizada', 'Flujo completo de capacitación. Este demo simulará la finalización de un módulo, disparando una función que generará un PDF de constancia personalizado en Drive.', 'http://googleusercontent.com/image_collection/image_retrieval/11482813430612964598')" class="bg-brandGold/10 hover:bg-brandGold text-brandGold hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandGold/20">
-                            Iniciar Módulo
+                        <span class="text-[11px] text-slate-500 font-mono">Apps Script Core</span>
+                        <button onclick="abrirModalDemo('Capacitación Automatizada', 'Sistema de gestión de aprendizaje (LMS). Automatiza el envío de videos, cuestionarios y la creación de constancias en PDF enviadas directamente al correo del empleado al finalizar.', 'http://googleusercontent.com/image_collection/image_retrieval/11482813430612964598')" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2 rounded transition-all border border-slate-700">
+                            Iniciar Demo
                         </button>
                     </div>
                 </div>
@@ -272,8 +267,8 @@
 
     <section id="personalizacion" class="bg-slate-900/50 py-16 border-t border-slate-800">
         <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-white mb-8">Arquitectura adaptada a su industria</h2>
-            <p class="text-slate-400 mb-6 max-w-2xl mx-auto">Seleccione el giro comercial y observe cómo estructuramos un flujo web automatizado para sus operaciones:</p>
+            <h2 class="text-3xl font-bold text-white mb-8">Soluciones Adaptadas a su Giro Comercial</h2>
+            <p class="text-slate-400 mb-6 max-w-2xl mx-auto">Seleccione una industria para visualizar la arquitectura de los procesos que podemos automatizar para su empresa:</p>
             
             <div class="max-w-4xl mx-auto">
                 <div class="flex flex-wrap justify-center gap-4 mb-10">
@@ -306,37 +301,37 @@
     </section>
 
     <section id="contacto" class="max-w-3xl mx-auto px-6 py-20 text-center">
-        <h2 class="text-3xl font-bold text-white">Solucione los cuellos de botella operativos</h2>
-        <p class="text-slate-400 mt-2 mb-8">Agende una sesión de diagnóstico sin costo. Analizamos sus procesos administrativos y diseñamos una solución integral.</p>
+        <h2 class="text-3xl font-bold text-white uppercase tracking-tight">Solicitar Diagnóstico Técnico</h2>
+        <p class="text-slate-400 mt-2 mb-8">Analizamos sus procesos actuales y diseñamos una propuesta de automatización integral sin costo inicial.</p>
         
         <form id="formContacto" class="space-y-6 text-left">
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-xs font-mono text-slate-500 uppercase mb-2">Nombre Completo</label>
-                    <input type="text" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Nombre completo">
+                    <label class="block text-[10px] font-mono text-slate-500 uppercase mb-2">Nombre y Apellido</label>
+                    <input type="text" required class="w-full bg-slate-900 border border-slate-800 rounded px-4 py-3 text-white focus:border-brandAccent outline-none transition-all text-sm" placeholder="Representante">
                 </div>
                 <div>
-                    <label class="block text-xs font-mono text-slate-500 uppercase mb-2">Teléfono Corporativo</label>
-                    <input type="tel" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Teléfono de contacto">
+                    <label class="block text-[10px] font-mono text-slate-500 uppercase mb-2">WhatsApp Corporativo</label>
+                    <input type="tel" required class="w-full bg-slate-900 border border-slate-800 rounded px-4 py-3 text-white focus:border-brandAccent outline-none transition-all text-sm" placeholder="Teléfono de contacto">
                 </div>
             </div>
             <div>
-                <label class="block text-xs font-mono text-slate-500 uppercase mb-2">Empresa e Industria</label>
-                <input type="text" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Nombre de la empresa">
+                <label class="block text-[10px] font-mono text-slate-500 uppercase mb-2">Empresa / Giro</label>
+                <input type="text" class="w-full bg-slate-900 border border-slate-800 rounded px-4 py-3 text-white focus:border-brandAccent outline-none transition-all text-sm" placeholder="Nombre comercial">
             </div>
             <div>
-                <label class="block text-xs font-mono text-slate-500 uppercase mb-2">Descripción del Requerimiento</label>
-                <textarea rows="4" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Describa brevemente el proceso que desea optimizar..."></textarea>
+                <label class="block text-[10px] font-mono text-slate-500 uppercase mb-2">Breve descripción del proceso a optimizar</label>
+                <textarea rows="4" class="w-full bg-slate-900 border border-slate-800 rounded px-4 py-3 text-white focus:border-brandAccent outline-none transition-all text-sm" placeholder="Ej: Control de inventarios, reportes de ventas, flujos de aprobación..."></textarea>
             </div>
-            <button type="submit" class="w-full bg-brandAccent hover:bg-sky-500 text-slate-900 font-bold py-4 rounded-lg transition-all shadow-lg shadow-brandAccent/20 flex items-center justify-center gap-2">
-                Solicitar Diagnóstico 
+            <button type="submit" class="w-full bg-brandAccent hover:bg-sky-500 text-slate-900 font-bold py-4 rounded transition-all shadow-lg shadow-brandAccent/20 flex items-center justify-center gap-2 uppercase tracking-widest text-sm">
+                Enviar Solicitud 
                 <span class="text-xl">→</span>
             </button>
         </form>
     </section>
 
-    <div id="modalDemo" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-500">
-        <div class="bg-enterpriseCard w-full max-w-lg rounded-2xl border border-slate-700 shadow-2xl relative overflow-hidden transform scale-90 transition-transform duration-500" id="modalTarjeta">
+    <div id="modalDemo" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-500">
+        <div class="bg-enterpriseCard w-full max-w-lg rounded-2xl border border-slate-700 shadow-2xl relative overflow-hidden transform scale-95 transition-transform duration-500" id="modalTarjeta">
             
             <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brandAccent via-blue-400 to-brandAccent"></div>
             
@@ -350,7 +345,7 @@
                         <img id="modalIcono" src="" alt="Icono Demo" class="w-12 h-12 object-contain grayscale opacity-60">
                     </div>
                     <div>
-                        <span class="text-xs text-brandAccent font-mono tracking-widest uppercase mb-1 block">Fase de Integración</span>
+                        <span class="text-[10px] text-brandAccent font-mono tracking-widest uppercase mb-1 block font-bold">Resumen Técnico</span>
                         <h2 id="modalTitulo" class="text-2xl font-extrabold text-white tracking-tight"></h2>
                     </div>
                 </div>
@@ -358,24 +353,20 @@
                 <p id="modalDescripcion" class="text-slate-400 text-sm leading-relaxed mb-6"></p>
                 
                 <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-6">
-                    <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 block mb-2">Impacto Operativo Estimado</span>
-                    <div class="grid grid-cols-2 gap-4">
+                    <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 block mb-3 border-b border-slate-800 pb-2">Impacto en Resultados</span>
+                    <div class="grid grid-cols-2 gap-4 text-center">
                         <div class="border-r border-slate-800 pr-2">
-                            <div class="text-xs text-slate-400">Eficiencia de Tiempo</div>
-                            <div class="text-lg font-bold text-brandAccent flex items-center gap-1">
-                                95% <span class="text-xs font-normal text-slate-500">Mejora</span>
-                            </div>
+                            <div class="text-[10px] text-slate-500 uppercase">Eficiencia</div>
+                            <div class="text-xl font-bold text-brandAccent mt-1">95%</div>
                         </div>
                         <div>
-                            <div class="text-xs text-slate-400">Integridad de Datos</div>
-                            <div class="text-lg font-bold text-emerald-400">
-                                100% <span class="text-xs font-normal text-slate-500">(Blindado)</span>
-                            </div>
+                            <div class="text-[10px] text-slate-500 uppercase">Seguridad</div>
+                            <div class="text-xl font-bold text-emerald-400 mt-1">Cero Errores</div>
                         </div>
                     </div>
                 </div>
                 
-                <button onclick="cerrarModalDemo()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 rounded-lg transition-colors border border-slate-700">
+                <button onclick="cerrarModalDemo()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded transition-colors border border-slate-700 uppercase tracking-widest text-xs">
                     Cerrar panel
                 </button>
             </div>
@@ -385,114 +376,112 @@
     </div>
 
     <script>
-        // Lógica de cálculo de merma para demo Restaurantes
+        // Cálculo de Merma para Restaurantes
         function calcularMerma() {
-            const input = document.getElementById('stockFisico').value;
-            const alerta = document.getElementById('alertaMerma');
+            const costo = parseFloat(document.getElementById('costoInsumo').value);
             const teorico = 15.5;
-            const real = parseFloat(input);
+            const real = parseFloat(document.getElementById('stockFisico').value);
+            const alerta = document.getElementById('alertaMerma');
             
-            if (isNaN(real)) return;
+            if (isNaN(real) || isNaN(costo)) return;
             
-            const diferencia = teorico - real;
+            const diferencia = (teorico - real).toFixed(1);
+            const perdidaDinero = (diferencia * costo).toFixed(2);
+            
+            alerta.classList.remove('hidden');
             
             if (diferencia > 0) {
-                const perdida = (diferencia * 280).toFixed(2); // Estimación de precio por kg
-                alerta.innerHTML = `<span>⚠️ Merma detectada: ${diferencia.toFixed(1)} kg</span><span class="font-bold">-$${perdida} MXN</span>`;
-                alerta.className = "mt-2 p-2 bg-rose-500/10 border border-rose-500/20 rounded text-[10px] text-rose-400 font-medium flex items-center justify-between";
+                alerta.innerHTML = `
+                    <div class="flex flex-col w-full">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="uppercase tracking-tighter">Merma Crítica:</span>
+                            <span class="font-bold">-${diferencia} kg</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs border-t border-rose-500/20 pt-1">
+                            <span>Impacto Financiero:</span>
+                            <span class="font-extrabold text-sm">-$${perdidaDinero} MXN</span>
+                        </div>
+                    </div>`;
+                alerta.className = "mt-2 p-3 bg-rose-500/10 border border-rose-500/30 rounded text-rose-400 flex flex-col";
             } else if (diferencia < 0) {
-                alerta.innerHTML = `<span>⚠️ Exceso detectado: ${Math.abs(diferencia).toFixed(1)} kg</span><span>Revisar captura POS</span>`;
-                alerta.className = "mt-2 p-2 bg-amber-500/10 border border-amber-500/20 rounded text-[10px] text-amber-400 font-medium flex items-center justify-between";
+                alerta.innerHTML = `<span>⚠️ Excedente detectado. Revisar reportes de venta.</span>`;
+                alerta.className = "mt-2 p-3 bg-amber-500/10 border border-amber-500/30 rounded text-amber-400 font-bold";
             } else {
-                alerta.innerHTML = `<span>✅ Inventario conciliado sin diferencias.</span>`;
-                alerta.className = "mt-2 p-2 bg-emerald-500/10 border border-emerald-500/20 rounded text-[10px] text-emerald-400 font-medium flex items-center justify-between";
+                alerta.innerHTML = `<span>✅ Inventario conciliado correctamente.</span>`;
+                alerta.className = "mt-2 p-3 bg-emerald-500/10 border border-emerald-500/30 rounded text-emerald-400 font-bold";
             }
         }
 
-        // Lógica para filtro de búsqueda en demo operativo
+        // Filtro de tabla interactiva
         function simularFiltro() {
             const input = document.getElementById('buscarTramite').value.toLowerCase();
             const filas = document.querySelectorAll('#tablaTramites tr');
-            
             filas.forEach(fila => {
-                const textoFila = fila.textContent.toLowerCase();
-                if(textoFila.includes(input)) {
-                    fila.style.display = "";
-                } else {
-                    fila.style.display = "none";
-                }
+                fila.style.display = fila.textContent.toLowerCase().includes(input) ? "" : "none";
             });
         }
 
-        // Lógica del Simulador de Giros
+        // Datos del Simulador de Giros
         const flujos = {
             restaurante: [
-                { t: "Costeo de Recetas", d: "Actualización automática de precios de insumos con impacto directo en margen de ganancia." },
-                { t: "Inventario Inteligente", d: "Cruce de datos de ventas (POS) contra almacén para detectar desviaciones operativas." },
-                { t: "Control de Caja", d: "Registro ágil y estructurado para gastos de proveedores e imprevistos." }
+                { t: "Costo de Receta", d: "Actualización de precios de materia prima con impacto directo en márgenes de ganancia." },
+                { t: "Conciliación de Stock", d: "Cruce de datos de ventas contra inventario físico para control de mermas y robos." },
+                { t: "Egresos de Caja", d: "Gestión digital de caja chica para pagos a proveedores y servicios menores." }
             ],
             constructora: [
-                { t: "Captura en Campo", d: "Registro de avance y destajos directamente desde dispositivos móviles." },
-                { t: "Validación Administrativa", d: "Aprobación de costos y autorizaciones de pago en tiempo real." },
-                { t: "Reporte de Utilidad", d: "Cálculo estructurado de rentabilidad por proyecto en curso." }
+                { t: "Reporte de Campo", d: "Captura digital de destajos y avances de obra directamente por residentes." },
+                { t: "Validación de Gastos", d: "Aprobación estructurada de insumos y nómina por la oficina central." },
+                { t: "Rentabilidad por Obra", d: "Cálculo preciso de costos reales contra presupuesto para cada proyecto." }
             ],
             logistica: [
-                { t: "Entrada de Pedido", d: "Integración automatizada con plataformas de venta electrónica o ERP." },
-                { t: "Optimización de Rutas", d: "Asignación estratégica de entregas a unidades de transporte." },
-                { t: "Confirmación de Entrega", d: "Recolección de firmas digitales con generación de reportes en PDF." }
+                { t: "Ingreso de Pedidos", d: "Sincronización de solicitudes externas con la base de datos operativa." },
+                { t: "Logística de Rutas", d: "Asignación estratégica de unidades para optimización de tiempos de entrega." },
+                { t: "Evidencia de Entrega", d: "Reportes automáticos con firma digital y fotos enviadas al servidor." }
             ],
             legal: [
-                { t: "Gestión de Expedientes", d: "Digitalización de datos y parametrización de fechas críticas." },
-                { t: "Notificaciones Automáticas", d: "Emisión de recordatorios programados sobre términos y vencimientos." },
-                { t: "Generación Documental", d: "Creación de formatos pre-autorizados integrados a la base de datos." }
+                { t: "Control de Expedientes", d: "Digitalización de expedientes con búsqueda inteligente y segura." },
+                { t: "Alertas de Términos", d: "Recordatorios vía WhatsApp y correo sobre fechas críticas de vencimiento." },
+                { t: "Automatización de Escritos", d: "Generación de formatos legales integrados con la base de datos del caso." }
             ]
         };
 
         function cambiarFlujo(tipo) {
             const contenido = document.getElementById('contenidoFlujo');
             const pasos = flujos[tipo];
-            
             contenido.innerHTML = pasos.map((paso, i) => `
-                <div class="flex-1 text-center group">
-                    <div class="w-12 h-12 bg-brandAccent/10 text-brandAccent border border-brandAccent/30 rounded-full flex items-center justify-center mx-auto mb-4 font-bold group-hover:bg-brandAccent group-hover:text-slate-900 transition-all">
+                <div class="flex-1 text-center">
+                    <div class="w-10 h-10 bg-brandAccent/10 text-brandAccent border border-brandAccent/30 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                         ${i + 1}
                     </div>
-                    <h4 class="text-white font-bold text-sm mb-2">${paso.t}</h4>
-                    <p class="text-slate-400 text-xs leading-relaxed">${paso.d}</p>
+                    <h4 class="text-white font-bold text-xs mb-2 uppercase tracking-tighter">${paso.t}</h4>
+                    <p class="text-slate-400 text-[10px] leading-relaxed">${paso.d}</p>
                 </div>
-                ${i < pasos.length - 1 ? '<div class="hidden md:block text-slate-700 text-xl">→</div>' : ''}
+                ${i < pasos.length - 1 ? '<div class="hidden md:block text-slate-700 text-lg">→</div>' : ''}
             `).join('');
         }
 
-        // Lógica de la Ventana Modal
+        // Funciones del Modal
         function abrirModalDemo(titulo, descripcion, urlIcono) {
-            const modal = document.getElementById('modalDemo');
-            const tarjeta = document.getElementById('modalTarjeta');
-            
             document.getElementById('modalTitulo').textContent = titulo;
             document.getElementById('modalDescripcion').textContent = descripcion;
             document.getElementById('modalIcono').src = urlIcono;
-            
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.classList.add('opacity-100');
-            tarjeta.classList.remove('scale-90');
-            tarjeta.classList.add('scale-100');
+            const m = document.getElementById('modalDemo');
+            m.classList.remove('opacity-0', 'pointer-events-none');
+            m.classList.add('opacity-100');
+            document.getElementById('modalTarjeta').classList.remove('scale-95');
+            document.getElementById('modalTarjeta').classList.add('scale-100');
         }
 
         function cerrarModalDemo() {
-            const modal = document.getElementById('modalDemo');
-            const tarjeta = document.getElementById('modalTarjeta');
-            
-            modal.classList.remove('opacity-100');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            tarjeta.classList.remove('scale-100');
-            tarjeta.classList.add('scale-90');
+            const m = document.getElementById('modalDemo');
+            m.classList.remove('opacity-100');
+            m.classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('modalTarjeta').classList.remove('scale-100');
+            document.getElementById('modalTarjeta').classList.add('scale-95');
         }
 
         document.getElementById('modalDemo').addEventListener('click', function(e) {
-            if (e.target === this) {
-                cerrarModalDemo();
-            }
+            if (e.target === this) cerrarModalDemo();
         });
     </script>
 </body>
