@@ -57,7 +57,10 @@
             <h2 class="text-3xl font-bold text-white">Interactúa con Aplicaciones Reales</h2>
             <p class="text-slate-400 mt-2">Demos funcionales con interfaces web puras conectadas a procesos automatizados.</p>
         </div>
-        
+        <button onclick="cambiarFlujo('restaurante')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
+    <span class="text-xl group-hover:scale-110 transition-transform">🍔</span>
+    Restaurantes y Bares
+</button>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-enterpriseCard rounded-xl border border-slate-800 text-left overflow-hidden flex flex-col justify-between shadow-xl transition-all hover:border-brandAccent/30">
     <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
@@ -273,6 +276,12 @@
 
 <script>
     const flujos = {
+
+        restaurante: [
+        { t: "Costeo de Recetas", d: "Actualiza el precio de un insumo en Sheets y ve el impacto en tu margen de ganancia al instante." },
+        { t: "Inventario Teórico vs Real", d: "Cruza las ventas del POS contra el stock físico para detectar mermas o robo hormiga de inmediato." },
+        { t: "Control de Caja Chica", d: "Registro express desde el celular para gastos imprevistos de proveedores y servicios." }
+    ],
         constructora: [
             { t: "Captura en Campo", d: "Residente registra destajos desde su móvil." },
             { t: "Validación Administrativa", d: "Oficina central aprueba costos en tiempo real." },
