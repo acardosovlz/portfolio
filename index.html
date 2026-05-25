@@ -59,9 +59,82 @@
         </div>
         
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-enterpriseCard p-6 rounded-xl border border-slate-800 text-center text-slate-500 py-12">
-                [Espacio para Demo 1: Portal Anti-Excel]
+          <div class="bg-enterpriseCard rounded-xl border border-slate-800 text-left overflow-hidden flex flex-col justify-between shadow-xl transition-all hover:border-brandAccent/30">
+    <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+            <span class="text-xs text-slate-400 font-mono ml-2">portal_notaria_v2.html</span>
+        </div>
+        <span class="bg-emerald-500/10 text-emerald-400 text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-emerald-500/20 font-semibold tracking-wider">Conectado a Google Sheets</span>
+    </div>
+
+    <div class="p-5 flex-1 flex flex-col justify-between">
+        <div>
+            <h3 class="text-xl font-bold text-white tracking-tight">Portal Operativo & Seguridad</h3>
+            <p class="text-xs text-slate-400 mt-1 mb-4">Mapeo visual de un proceso real. Los usuarios operan aquí; la base de datos en Sheets permanece oculta y protegida.</p>
+            
+            <div class="flex gap-2 mb-3">
+                <input type="text" id="buscarTramite" placeholder="Buscar trámite por cliente..." class="bg-slate-900 text-xs px-3 py-2 rounded border border-slate-700 w-full text-slate-200 focus:outline-none focus:border-brandAccent">
+                <button onclick="simularFiltro()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2 rounded border border-slate-700 font-medium transition-colors">Filtrar</button>
             </div>
+
+            <div class="overflow-x-auto rounded border border-slate-800 bg-slate-900/60">
+                <table class="w-full text-left border-collapse text-[11px]">
+                    <thead>
+                        <tr class="bg-slate-900 text-slate-400 border-b border-slate-800 font-mono">
+                            <th class="p-2">ID</th>
+                            <th class="p-2">Cliente / Expediente</th>
+                            <th class="p-2">Estatus</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaTramites">
+                        <tr class="border-b border-slate-800/50 hover:bg-slate-800/30">
+                            <td class="p-2 font-mono text-brandAccent">#2026-01</td>
+                            <td class="p-2 font-medium text-white">Inmobiliaria Garza S.A.</td>
+                            <td class="p-2"><span class="bg-amber-500/10 text-amber-400 px-1.5 py-0.5 rounded border border-amber-500/20 font-medium">En Revisión Jurídica</span></td>
+                        </tr>
+                        <tr class="border-b border-slate-800/50 hover:bg-slate-800/30">
+                            <td class="p-2 font-mono text-brandAccent">#2026-02</td>
+                            <td class="p-2 font-medium text-white">Desarrollos Apodaca</td>
+                            <td class="p-2"><span class="bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded border border-emerald-500/20 font-medium">Listo para Firma</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30">
+                            <td class="p-2 font-mono text-brandAccent">#2026-03</td>
+                            <td class="p-2 font-medium text-white">Logística San Pedro</td>
+                            <td class="p-2"><span class="bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded border border-blue-500/20 font-medium">Captura Inicial</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
+            <span class="text-[11px] text-slate-500 font-mono">Frontend: HTML/Tailwind</span>
+            <button onclick="alert('¡Excelente! Este botón disparará un flujo interactivo que conectaremos en tiempo real con Apps Script más adelante.')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20 hover:shadow-lg hover:shadow-brandAccent/10">
+                Ver Demo Operativo
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Lógica rápida e interactiva local para que el demo reaccione de inmediato en el navegador
+    function simularFiltro() {
+        const input = document.getElementById('buscarTramite').value.toLowerCase();
+        const filas = document.querySelectorAll('#tablaTramites tr');
+        
+        filas.forEach(fila => {
+            const textoFila = fila.textContent.toLowerCase();
+            if(textoFila.includes(input)) {
+                fila.style.display = "";
+            } else {
+                fila.style.display = "none";
+            }
+        });
+    }
+</script>
             <div class="bg-enterpriseCard p-6 rounded-xl border border-slate-800 text-center text-slate-500 py-12">
                 [Espacio para Demo 2: Dashboard KPIs]
             </div>
