@@ -247,9 +247,65 @@
             <h2 class="text-3xl font-bold text-white mb-8">No te adaptes al software. El software se adapta a ti.</h2>
             <p class="text-slate-400 mb-6 max-w-2xl mx-auto">Selecciona el giro de tu empresa y observa cómo estructuramos un flujo web automatizado a la medida de tus necesidades:</p>
             
-            <div class="bg-enterpriseCard p-8 rounded-xl border border-slate-800 max-w-3xl mx-auto min-h-[200px] flex items-center justify-center text-slate-500">
-                [Espacio para el Simulador Dinámico de Giros Comerciales]
+            <div class="max-w-4xl mx-auto">
+    <div class="flex flex-wrap justify-center gap-4 mb-10">
+        <button onclick="cambiarFlujo('constructora')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/8708647173257210735" class="w-6 h-6 object-contain grayscale group-hover:grayscale-0" alt="Constructora">
+            Constructoras
+        </button>
+        <button onclick="cambiarFlujo('logistica')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/11482813430612964598" class="w-6 h-6 object-contain grayscale group-hover:grayscale-0" alt="Logística">
+            Logística
+        </button>
+        <button onclick="cambiarFlujo('legal')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/1408324994696884132" class="w-6 h-6 object-contain grayscale group-hover:grayscale-0" alt="Legal">
+            Despachos Legales
+        </button>
+    </div>
+
+    <div id="contenedorFlujo" class="bg-enterpriseCard p-8 rounded-2xl border border-slate-800 shadow-2xl relative overflow-hidden">
+        <div id="contenidoFlujo" class="relative z-10 flex flex-col md:flex-row items-center justify-around gap-6">
+            <p class="text-slate-500 animate-pulse">Selecciona un giro comercial para ver la arquitectura de su sistema...</p>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-brandAccent/5 to-transparent pointer-events-none"></div>
+    </div>
+</div>
+
+<script>
+    const flujos = {
+        constructora: [
+            { t: "Captura en Campo", d: "Residente registra destajos desde su móvil." },
+            { t: "Validación Administrativa", d: "Oficina central aprueba costos en tiempo real." },
+            { t: "Reporte de Utilidad", d: "Cálculo automático de rentabilidad por obra." }
+        ],
+        logistica: [
+            { t: "Entrada de Pedido", d: "Sincronización automática con tu tienda o ERP." },
+            { t: "Optimización de Rutas", d: "Asignación inteligente a unidades de transporte." },
+            { t: "Confirmación de Entrega", d: "Captura de firma y foto con envío de PDF al cliente." }
+        ],
+        legal: [
+            { t: "Alta de Expediente", d: "Digitalización y mapeo de fechas críticas." },
+            { t: "Alertas Automáticas", d: "Aviso vía WhatsApp sobre términos legales por vencer." },
+            { t: "Generación de Escritos", d: "Plantillas inteligentes que se llenan con un clic." }
+        ]
+    };
+
+    function cambiarFlujo(tipo) {
+        const contenido = document.getElementById('contenidoFlujo');
+        const pasos = flujos[tipo];
+        
+        contenido.innerHTML = pasos.map((paso, i) => `
+            <div class="flex-1 text-center group">
+                <div class="w-12 h-12 bg-brandAccent/10 text-brandAccent border border-brandAccent/30 rounded-full flex items-center justify-center mx-auto mb-4 font-bold group-hover:bg-brandAccent group-hover:text-slate-900 transition-all">
+                    ${i + 1}
+                </div>
+                <h4 class="text-white font-bold text-sm mb-2">${paso.t}</h4>
+                <p class="text-slate-400 text-xs leading-relaxed">${paso.d}</p>
             </div>
+            ${i < pasos.length - 1 ? '<div class="hidden md:block text-slate-700 text-xl">→</div>' : ''}
+        `).join('');
+    }
+</script>
         </div>
     </section>
 
@@ -257,9 +313,30 @@
         <h2 class="text-3xl font-bold text-white">¿Listo para eliminar el caos en tu oficina?</h2>
         <p class="text-slate-400 mt-2 mb-8">Agenda una sesión de diagnóstico de 15 minutos sin costo. Analizamos tu archivo de Excel más pesado y te decimos cómo transformarlo en web.</p>
         
-        <div class="bg-enterpriseCard p-8 rounded-xl border border-slate-800 text-left">
-            [Espacio para el Formulario de Prospección]
+       <form id="formContacto" class="space-y-6">
+    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <label class="block text-xs font-mono text-slate-500 uppercase mb-2">Nombre Completo</label>
+            <input type="text" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Juan Pérez">
         </div>
+        <div>
+            <label class="block text-xs font-mono text-slate-500 uppercase mb-2">WhatsApp de Negocios</label>
+            <input type="tel" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="+52 81 ...">
+        </div>
+    </div>
+    <div>
+        <label class="block text-xs font-mono text-slate-500 uppercase mb-2">Empresa / Giro</label>
+        <input type="text" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Ej. Transportes del Norte">
+    </div>
+    <div>
+        <label class="block text-xs font-mono text-slate-500 uppercase mb-2">¿Cuál es tu mayor cuello de botella?</label>
+        <textarea rows="4" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Ej. El control de inventarios en Excel es un caos..."></textarea>
+    </div>
+    <button type="submit" class="w-full bg-brandAccent hover:bg-sky-500 text-slate-900 font-bold py-4 rounded-lg transition-all shadow-lg shadow-brandAccent/20 flex items-center justify-center gap-2">
+        Enviar y Solicitar Diagnóstico 
+        <span class="text-xl">→</span>
+    </button>
+</form>
     </section>
 
 </body>
