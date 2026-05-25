@@ -26,7 +26,7 @@
     <header class="border-b border-slate-800 bg-enterpriseBg/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="text-lg font-bold tracking-wider text-white">
-                <span class="text-brandAccent">//</span> SYSTEMS<span class="text-brandAccent">.DEV</span>
+                <span class="text-brandAccent">//</span> SYSTEMS<span class="text-brandAccent"> DEVELOP</span>
             </div>
             <a href="#contacto" class="bg-slate-800 hover:bg-slate-700 text-white text-sm px-4 py-2 rounded-lg font-medium transition-colors border border-slate-700">
                 Diagnóstico Gratis
@@ -65,7 +65,7 @@
             <span class="w-3 h-3 rounded-full bg-red-500"></span>
             <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
             <span class="w-3 h-3 rounded-full bg-green-500"></span>
-            <span class="text-xs text-slate-400 font-mono ml-2">portal_notaria_v2.html</span>
+            <span class="text-xs text-slate-400 font-mono ml-2">Portal Juridico</span>
         </div>
         <span class="bg-emerald-500/10 text-emerald-400 text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-emerald-500/20 font-semibold tracking-wider">Conectado a Google Sheets</span>
     </div>
@@ -112,9 +112,9 @@
 
         <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
             <span class="text-[11px] text-slate-500 font-mono">Frontend: HTML/Tailwind</span>
-            <button onclick="alert('¡Excelente! Este botón disparará un flujo interactivo que conectaremos en tiempo real con Apps Script más adelante.')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20 hover:shadow-lg hover:shadow-brandAccent/10">
-                Ver Demo Operativo
-            </button>
+           <button onclick="abrirModalDemo('Portal Operativo Anti-Excel', 'Esta interfaz es el puente seguro entre tu personal y la base de datos (Google Sheets). El cliente verá exactamente el flujo que definimos: Ingreso ➔ Validación ➔ Reporte Final.', 'https://acardosovlz.github.io/portfolio/favicon.ico')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20 hover:shadow-lg hover:shadow-brandAccent/10">
+    Ver Demo Operativo
+</button>
         </div>
     </div>
 </div>
@@ -189,9 +189,9 @@
 
         <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
             <span class="text-[11px] text-slate-500 font-mono">Control Total KPI</span>
-            <button onclick="alert('¡Bum! En la fase final, este botón abrirá una ventana interactiva con gráficas avanzadas conectadas directamente a las hojas de cálculo de tus directores.')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20 hover:shadow-lg hover:shadow-brandAccent/10">
-                Ver Métricas
-            </button>
+           <button onclick="abrirModalDemo('Dashboard KPIs Gerencial', 'Visualización de datos avanzados. Al conectarlo, esta pantalla pintará gráficos interactivos con Chart.js consumiendo datos en vivo de tus hojas de cálculo de Google.', 'http://googleusercontent.com/image_collection/image_retrieval/7512396139633076259')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20 hover:shadow-lg hover:shadow-brandAccent/10">
+    Ver Métricas
+</button>
         </div>
     </div>
 </div>
@@ -233,9 +233,9 @@
 
         <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
             <span class="text-[11px] text-slate-500 font-mono">Backend: Automatización PDF</span>
-            <button onclick="alert('¡Genial! Este demo permitirá realizar un examen rápido de 3 preguntas en pantalla y simulará la creación automática de una constancia de habilidades laborales en formato PDF.')" class="bg-brandGold/10 hover:bg-brandGold text-brandGold hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandGold/20 hover:shadow-lg hover:shadow-brandGold/10">
-                Iniciar Módulo
-            </button>
+            <button onclick="abrirModalDemo('LMS y Academia Automatizada', 'Flujo completo de capacitación. Este demo simulará la finalización de un módulo, disparando una función en Apps Script que generará un PDF de constancia personalizado en Drive.', 'http://googleusercontent.com/image_collection/image_retrieval/11482813430612964598')" class="bg-brandGold/10 hover:bg-brandGold text-brandGold hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandGold/20 hover:shadow-lg hover:shadow-brandGold/10">
+    Iniciar Módulo
+</button>
         </div>
     </div>
 </div>
@@ -338,6 +338,78 @@
     </button>
 </form>
     </section>
+<div id="modalDemo" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-500">
+    
+    <div class="bg-enterpriseCard w-full max-w-lg rounded-2xl border border-slate-700 shadow-2xl relative overflow-hidden transform scale-90 transition-transform duration-500" id="modalTarjeta">
+        
+        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brandAccent via-blue-400 to-brandAccent"></div>
+        
+        <button onclick="cerrarModalDemo()" class="absolute top-4 right-4 text-slate-500 hover:text-white text-xl p-1 transition-colors">
+            &times;
+        </button>
+        
+        <div class="p-8">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-16 h-16 bg-slate-900/60 rounded-xl border border-slate-700 flex items-center justify-center p-2">
+                    <img id="modalIcono" src="" alt="Icono Demo" class="w-12 h-12 object-contain grayscale opacity-60">
+                </div>
+                <div>
+                    <span class="text-xs text-brandAccent font-mono tracking-widest uppercase mb-1 block">Fase de Integración</span>
+                    <h2 id="modalTitulo" class="text-2xl font-extrabold text-white tracking-tight"></h2>
+                </div>
+            </div>
+            
+            <p id="modalDescripcion" class="text-slate-400 text-sm leading-relaxed mb-6"></p>
+            
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-[11px] text-slate-500 mb-6 overflow-x-auto">
+                <span class="text-brandAccent">google.script.run</span><br>
+                &nbsp;&nbsp;.withSuccessHandler(<span class="text-emerald-400">renderizarVista</span>)<br>
+                &nbsp;&nbsp;.ejecutarFuncion(<span class="text-blue-400">'obtenerDatosSheets'</span>);
+            </div>
+            
+            <button onclick="cerrarModalDemo()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 rounded-lg transition-colors border border-slate-700">
+                Entendido, fiera.
+            </button>
+        </div>
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-brandAccent/5 to-transparent pointer-events-none"></div>
+    </div>
+</div>
 
+<script>
+    function abrirModalDemo(titulo, descripcion, urlIcono) {
+        const modal = document.getElementById('modalDemo');
+        const tarjeta = document.getElementById('modalTarjeta');
+        
+        // Rellenar datos
+        document.getElementById('modalTitulo').textContent = titulo;
+        document.getElementById('modalDescripcion').textContent = descripcion;
+        document.getElementById('modalIcono').src = urlIcono;
+        
+        // Mostrar Modal (Fade-in + Scale-up)
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+        tarjeta.classList.remove('scale-90');
+        tarjeta.classList.add('scale-100');
+    }
+
+    function cerrarModalDemo() {
+        const modal = document.getElementById('modalDemo');
+        const tarjeta = document.getElementById('modalTarjeta');
+        
+        // Ocultar Modal (Fade-out + Scale-down)
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        tarjeta.classList.remove('scale-100');
+        tarjeta.classList.add('scale-90');
+    }
+
+    // Cerrar si se hace clic fuera de la tarjeta
+    document.getElementById('modalDemo').addEventListener('click', function(e) {
+        if (e.target === this) {
+            cerrarModalDemo();
+        }
+    });
+</script>
 </body>
 </html>
