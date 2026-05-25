@@ -57,191 +57,173 @@
             <h2 class="text-3xl font-bold text-white">Interactúa con Aplicaciones Reales</h2>
             <p class="text-slate-400 mt-2">Demos funcionales con interfaces web puras conectadas a procesos automatizados.</p>
         </div>
-        <button onclick="cambiarFlujo('restaurante')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
-    <span class="text-xl group-hover:scale-110 transition-transform">🍔</span>
-    Restaurantes y Bares
-</button>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-enterpriseCard rounded-xl border border-slate-800 text-left overflow-hidden flex flex-col justify-between shadow-xl transition-all hover:border-brandAccent/30">
-    <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-red-500"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-            <span class="w-3 h-3 rounded-full bg-green-500"></span>
-            <span class="text-xs text-slate-400 font-mono ml-2">Portal Juridico</span>
-        </div>
-        <span class="bg-emerald-500/10 text-emerald-400 text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-emerald-500/20 font-semibold tracking-wider">Conectado a Google Sheets</span>
-    </div>
-
-    <div class="p-5 flex-1 flex flex-col justify-between">
-        <div>
-            <h3 class="text-xl font-bold text-white tracking-tight">Portal Operativo & Seguridad</h3>
-            <p class="text-xs text-slate-400 mt-1 mb-4">Mapeo visual de un proceso real. Los usuarios operan aquí; la base de datos en Sheets permanece oculta y protegida.</p>
-            
-            <div class="flex gap-2 mb-3">
-                <input type="text" id="buscarTramite" placeholder="Buscar trámite por cliente..." class="bg-slate-900 text-xs px-3 py-2 rounded border border-slate-700 w-full text-slate-200 focus:outline-none focus:border-brandAccent">
-                <button onclick="simularFiltro()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2 rounded border border-slate-700 font-medium transition-colors">Filtrar</button>
-            </div>
-
-            <div class="overflow-x-auto rounded border border-slate-800 bg-slate-900/60">
-                <table class="w-full text-left border-collapse text-[11px]">
-                    <thead>
-                        <tr class="bg-slate-900 text-slate-400 border-b border-slate-800 font-mono">
-                            <th class="p-2">ID</th>
-                            <th class="p-2">Cliente / Expediente</th>
-                            <th class="p-2">Estatus</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaTramites">
-                        <tr class="border-b border-slate-800/50 hover:bg-slate-800/30">
-                            <td class="p-2 font-mono text-brandAccent">#2026-01</td>
-                            <td class="p-2 font-medium text-white">Inmobiliaria Garza S.A.</td>
-                            <td class="p-2"><span class="bg-amber-500/10 text-amber-400 px-1.5 py-0.5 rounded border border-amber-500/20 font-medium">En Revisión Jurídica</span></td>
-                        </tr>
-                        <tr class="border-b border-slate-800/50 hover:bg-slate-800/30">
-                            <td class="p-2 font-mono text-brandAccent">#2026-02</td>
-                            <td class="p-2 font-medium text-white">Desarrollos Apodaca</td>
-                            <td class="p-2"><span class="bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded border border-emerald-500/20 font-medium">Listo para Firma</span></td>
-                        </tr>
-                        <tr class="hover:bg-slate-800/30">
-                            <td class="p-2 font-mono text-brandAccent">#2026-03</td>
-                            <td class="p-2 font-medium text-white">Logística San Pedro</td>
-                            <td class="p-2"><span class="bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded border border-blue-500/20 font-medium">Captura Inicial</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
-            <span class="text-[11px] text-slate-500 font-mono">Frontend: HTML/Tailwind</span>
-           <button onclick="abrirModalDemo('Portal Operativo Anti-Excel', 'Esta interfaz es el puente seguro entre tu personal y la base de datos (Google Sheets). El cliente verá exactamente el flujo que definimos: Ingreso ➔ Validación ➔ Reporte Final.', 'https://acardosovlz.github.io/portfolio/favicon.ico')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20 hover:shadow-lg hover:shadow-brandAccent/10">
-    Ver Demo Operativo
-</button>
-        </div>
-    </div>
-</div>
-
-<script>
-    // Lógica rápida e interactiva local para que el demo reaccione de inmediato en el navegador
-    function simularFiltro() {
-        const input = document.getElementById('buscarTramite').value.toLowerCase();
-        const filas = document.querySelectorAll('#tablaTramites tr');
         
-        filas.forEach(fila => {
-            const textoFila = fila.textContent.toLowerCase();
-            if(textoFila.includes(input)) {
-                fila.style.display = "";
-            } else {
-                fila.style.display = "none";
-            }
-        });
-    }
-</script>
+        <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-enterpriseCard rounded-xl border border-slate-800 text-left overflow-hidden flex flex-col justify-between shadow-xl transition-all hover:border-brandAccent/30">
-    <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-red-500"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-            <span class="w-3 h-3 rounded-full bg-green-500"></span>
-            <span class="text-xs text-slate-400 font-mono ml-2">dashboard_gerencial.html</span>
-        </div>
-        <span class="bg-sky-500/10 text-brandAccent text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-brandAccent/20 font-semibold tracking-wider">Métricas en Vivo</span>
-    </div>
-
-    <div class="p-5 flex-1 flex flex-col justify-between">
-        <div>
-            <h3 class="text-xl font-bold text-white tracking-tight">Dashboard Gerencial</h3>
-            <p class="text-xs text-slate-400 mt-1 mb-4">La salud financiera y operativa de tu negocio resumida en una sola pantalla, alimentada por tu equipo de trabajo.</p>
-            
-            <div class="grid grid-cols-2 gap-3 mb-4">
-                <div class="bg-slate-900/80 p-3 rounded border border-slate-800">
-                    <span class="text-[10px] uppercase tracking-wider text-slate-500 font-medium">Facturado Mes</span>
-                    <div class="text-base font-bold text-emerald-400 mt-0.5">$342,500 MXN</div>
+                <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        <span class="text-xs text-slate-400 font-mono ml-2">Portal Operativo</span>
+                    </div>
+                    <span class="bg-emerald-500/10 text-emerald-400 text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-emerald-500/20 font-semibold tracking-wider">Sheets DB</span>
                 </div>
-                <div class="bg-slate-900/80 p-3 rounded border border-slate-800">
-                    <span class="text-[10px] uppercase tracking-wider text-slate-500 font-medium">Proyectos Activos</span>
-                    <div class="text-base font-bold text-white mt-0.5">14 <span class="text-[10px] text-amber-500 font-normal">(3 Retrasados)</span></div>
+
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white tracking-tight">Portal Operativo & Seguridad</h3>
+                        <p class="text-xs text-slate-400 mt-1 mb-4">Mapeo visual de un proceso real. Los usuarios operan aquí; la base de datos en Sheets permanece oculta y protegida.</p>
+                        
+                        <div class="flex gap-2 mb-3">
+                            <input type="text" id="buscarTramite" placeholder="Buscar trámite por cliente..." class="bg-slate-900 text-xs px-3 py-2 rounded border border-slate-700 w-full text-slate-200 focus:outline-none focus:border-brandAccent">
+                            <button onclick="simularFiltro()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2 rounded border border-slate-700 font-medium transition-colors">Filtrar</button>
+                        </div>
+
+                        <div class="overflow-x-auto rounded border border-slate-800 bg-slate-900/60">
+                            <table class="w-full text-left border-collapse text-[11px]">
+                                <thead>
+                                    <tr class="bg-slate-900 text-slate-400 border-b border-slate-800 font-mono">
+                                        <th class="p-2">ID</th>
+                                        <th class="p-2">Cliente / Expediente</th>
+                                        <th class="p-2">Estatus</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaTramites">
+                                    <tr class="border-b border-slate-800/50 hover:bg-slate-800/30">
+                                        <td class="p-2 font-mono text-brandAccent">#2026-01</td>
+                                        <td class="p-2 font-medium text-white">Inmobiliaria Garza S.A.</td>
+                                        <td class="p-2"><span class="bg-amber-500/10 text-amber-400 px-1.5 py-0.5 rounded border border-amber-500/20 font-medium">En Revisión</span></td>
+                                    </tr>
+                                    <tr class="border-b border-slate-800/50 hover:bg-slate-800/30">
+                                        <td class="p-2 font-mono text-brandAccent">#2026-02</td>
+                                        <td class="p-2 font-medium text-white">Desarrollos Apodaca</td>
+                                        <td class="p-2"><span class="bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded border border-emerald-500/20 font-medium">Aprobado</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-800/30">
+                                        <td class="p-2 font-mono text-brandAccent">#2026-03</td>
+                                        <td class="p-2 font-medium text-white">Logística San Pedro</td>
+                                        <td class="p-2"><span class="bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded border border-blue-500/20 font-medium">Captura Inicial</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-500 font-mono">Frontend: HTML/Tailwind</span>
+                        <button onclick="abrirModalDemo('Portal Operativo Anti-Excel', 'Esta interfaz es el puente seguro entre tu personal y la base de datos (Google Sheets). El cliente verá exactamente el flujo que definimos: Ingreso ➔ Validación ➔ Reporte Final.', 'https://acardosovlz.github.io/portfolio/favicon.ico')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20 hover:shadow-lg hover:shadow-brandAccent/10">
+                            Ver Demo Operativo
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-slate-900/40 p-3 rounded border border-slate-800/80 space-y-3">
-                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono block">Eficiencia por Departamento:</span>
-                
-                <div>
-                    <div class="flex justify-between text-[11px] mb-1">
-                        <span class="text-slate-300 font-medium">Operaciones e Integración</span>
-                        <span class="text-brandAccent font-mono">92%</span>
-                    </div>
-                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                        <div class="bg-brandAccent h-full rounded-full transition-all duration-1000" style="width: 92%"></div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex justify-between text-[11px] mb-1">
-                        <span class="text-slate-300 font-medium">Finanzas y Cobranza</span>
-                        <span class="text-emerald-400 font-mono">78%</span>
-                    </div>
-                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                        <div class="bg-emerald-400 h-full rounded-full transition-all duration-1000" style="width: 78%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
-            <span class="text-[11px] text-slate-500 font-mono">Control Total KPI</span>
-           <button onclick="abrirModalDemo('Dashboard KPIs Gerencial', 'Visualización de datos avanzados. Al conectarlo, esta pantalla pintará gráficos interactivos con Chart.js consumiendo datos en vivo de tus hojas de cálculo de Google.', 'http://googleusercontent.com/image_collection/image_retrieval/7512396139633076259')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20 hover:shadow-lg hover:shadow-brandAccent/10">
-    Ver Métricas
-</button>
-        </div>
-    </div>
-</div>
             <div class="bg-enterpriseCard rounded-xl border border-slate-800 text-left overflow-hidden flex flex-col justify-between shadow-xl transition-all hover:border-brandAccent/30">
-    <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-red-500"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-            <span class="w-3 h-3 rounded-full bg-green-500"></span>
-            <span class="text-xs text-slate-400 font-mono ml-2">lms_enterprise.html</span>
-        </div>
-        <span class="bg-amber-500/10 text-brandGold text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-brandGold/20 font-semibold tracking-wider">Multi-Empresa</span>
-    </div>
-
-    <div class="p-5 flex-1 flex flex-col justify-between">
-        <div>
-            <h3 class="text-xl font-bold text-white tracking-tight">Academia Interna Automatizada</h3>
-            <p class="text-xs text-slate-400 mt-1 mb-4">Automatiza la inducción y capacitación del personal nuevo. Evalúa, mide el progreso y genera constancias automáticamente.</p>
-            
-            <div class="bg-slate-900/90 p-3 rounded border border-slate-800 space-y-3">
-                <div class="flex justify-between items-center">
-                    <span class="text-[11px] text-white font-medium">Módulo: Políticas de Seguridad e Higiene</span>
-                    <span class="text-[10px] text-slate-500 font-mono">Progreso: 66%</span>
+                <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        <span class="text-xs text-slate-400 font-mono ml-2">dashboard_gerencial.html</span>
+                    </div>
+                    <span class="bg-sky-500/10 text-brandAccent text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-brandAccent/20 font-semibold tracking-wider">Métricas en Vivo</span>
                 </div>
-                
-                <div class="space-y-1.5">
-                    <div class="flex items-center gap-2 text-[11px] text-emerald-400">
-                        <span class="font-mono">✓</span> 1.1 Introducción y EPP Básico
+
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white tracking-tight">Dashboard Gerencial</h3>
+                        <p class="text-xs text-slate-400 mt-1 mb-4">La salud financiera y operativa de tu negocio resumida en una sola pantalla, alimentada por tu equipo de trabajo.</p>
+                        
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="bg-slate-900/80 p-3 rounded border border-slate-800">
+                                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-medium">Facturado Mes</span>
+                                <div class="text-base font-bold text-emerald-400 mt-0.5">$342,500 MXN</div>
+                            </div>
+                            <div class="bg-slate-900/80 p-3 rounded border border-slate-800">
+                                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-medium">Proyectos Activos</span>
+                                <div class="text-base font-bold text-white mt-0.5">14 <span class="text-[10px] text-amber-500 font-normal">(3 Retrasados)</span></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/40 p-3 rounded border border-slate-800/80 space-y-3">
+                            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono block">Eficiencia por Departamento:</span>
+                            
+                            <div>
+                                <div class="flex justify-between text-[11px] mb-1">
+                                    <span class="text-slate-300 font-medium">Operaciones e Integración</span>
+                                    <span class="text-brandAccent font-mono">92%</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brandAccent h-full rounded-full transition-all duration-1000" style="width: 92%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-[11px] mb-1">
+                                    <span class="text-slate-300 font-medium">Finanzas y Cobranza</span>
+                                    <span class="text-emerald-400 font-mono">78%</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-emerald-400 h-full rounded-full transition-all duration-1000" style="width: 78%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-2 text-[11px] text-emerald-400">
-                        <span class="font-mono">✓</span> 1.2 Protocolo de Evacuación en Planta
-                    </div>
-                    <div class="flex items-center gap-2 text-[11px] text-slate-400 animate-pulse">
-                        <span class="text-brandGold font-mono">➔</span> 1.3 Evaluación Final del Módulo
+
+                    <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-500 font-mono">Control Total KPI</span>
+                        <button onclick="abrirModalDemo('Dashboard KPIs Gerencial', 'Visualización de datos avanzados. Al conectarlo, esta pantalla pintará gráficos interactivos con Chart.js consumiendo datos en vivo de tus hojas de cálculo de Google.', 'http://googleusercontent.com/image_collection/image_retrieval/7512396139633076259')" class="bg-brandAccent/10 hover:bg-brandAccent text-brandAccent hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandAccent/20 hover:shadow-lg hover:shadow-brandAccent/10">
+                            Ver Métricas
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
-            <span class="text-[11px] text-slate-500 font-mono">Backend: Automatización PDF</span>
-            <button onclick="abrirModalDemo('LMS y Academia Automatizada', 'Flujo completo de capacitación. Este demo simulará la finalización de un módulo, disparando una función en Apps Script que generará un PDF de constancia personalizado en Drive.', 'http://googleusercontent.com/image_collection/image_retrieval/11482813430612964598')" class="bg-brandGold/10 hover:bg-brandGold text-brandGold hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandGold/20 hover:shadow-lg hover:shadow-brandGold/10">
-    Iniciar Módulo
-</button>
-        </div>
-    </div>
-</div>
+            <div class="bg-enterpriseCard rounded-xl border border-slate-800 text-left overflow-hidden flex flex-col justify-between shadow-xl transition-all hover:border-brandAccent/30">
+                <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        <span class="text-xs text-slate-400 font-mono ml-2">lms_enterprise.html</span>
+                    </div>
+                    <span class="bg-amber-500/10 text-brandGold text-[10px] uppercase font-mono px-2 py-0.5 rounded border border-brandGold/20 font-semibold tracking-wider">Multi-Empresa</span>
+                </div>
+
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white tracking-tight">Academia Interna Automatizada</h3>
+                        <p class="text-xs text-slate-400 mt-1 mb-4">Automatiza la inducción y capacitación del personal nuevo. Evalúa, mide el progreso y genera constancias automáticamente.</p>
+                        
+                        <div class="bg-slate-900/90 p-3 rounded border border-slate-800 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[11px] text-white font-medium">Módulo: Políticas de Seguridad e Higiene</span>
+                                <span class="text-[10px] text-slate-500 font-mono">Progreso: 66%</span>
+                            </div>
+                            
+                            <div class="space-y-1.5">
+                                <div class="flex items-center gap-2 text-[11px] text-emerald-400">
+                                    <span class="font-mono">✓</span> 1.1 Introducción y EPP Básico
+                                </div>
+                                <div class="flex items-center gap-2 text-[11px] text-emerald-400">
+                                    <span class="font-mono">✓</span> 1.2 Protocolo de Evacuación en Planta
+                                </div>
+                                <div class="flex items-center gap-2 text-[11px] text-slate-400 animate-pulse">
+                                    <span class="text-brandGold font-mono">➔</span> 1.3 Evaluación Final del Módulo
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 border-t border-slate-800 pt-4 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-500 font-mono">Backend: Automatización PDF</span>
+                        <button onclick="abrirModalDemo('LMS y Academia Automatizada', 'Flujo completo de capacitación. Este demo simulará la finalización de un módulo, disparando una función en Apps Script que generará un PDF de constancia personalizado en Drive.', 'http://googleusercontent.com/image_collection/image_retrieval/11482813430612964598')" class="bg-brandGold/10 hover:bg-brandGold text-brandGold hover:text-slate-900 text-xs font-bold px-4 py-2 rounded transition-all border border-brandGold/20 hover:shadow-lg hover:shadow-brandGold/10">
+                            Iniciar Módulo
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -251,70 +233,32 @@
             <p class="text-slate-400 mb-6 max-w-2xl mx-auto">Selecciona el giro de tu empresa y observa cómo estructuramos un flujo web automatizado a la medida de tus necesidades:</p>
             
             <div class="max-w-4xl mx-auto">
-    <div class="flex flex-wrap justify-center gap-4 mb-10">
-        <button onclick="cambiarFlujo('constructora')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/8708647173257210735" class="w-6 h-6 object-contain grayscale group-hover:grayscale-0" alt="Constructora">
-            Constructoras
-        </button>
-        <button onclick="cambiarFlujo('logistica')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/11482813430612964598" class="w-6 h-6 object-contain grayscale group-hover:grayscale-0" alt="Logística">
-            Logística
-        </button>
-        <button onclick="cambiarFlujo('legal')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/1408324994696884132" class="w-6 h-6 object-contain grayscale group-hover:grayscale-0" alt="Legal">
-            Despachos Legales
-        </button>
-    </div>
-
-    <div id="contenedorFlujo" class="bg-enterpriseCard p-8 rounded-2xl border border-slate-800 shadow-2xl relative overflow-hidden">
-        <div id="contenidoFlujo" class="relative z-10 flex flex-col md:flex-row items-center justify-around gap-6">
-            <p class="text-slate-500 animate-pulse">Selecciona un giro comercial para ver la arquitectura de su sistema...</p>
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-br from-brandAccent/5 to-transparent pointer-events-none"></div>
-    </div>
-</div>
-
-<script>
-    const flujos = {
-
-        restaurante: [
-        { t: "Costeo de Recetas", d: "Actualiza el precio de un insumo en Sheets y ve el impacto en tu margen de ganancia al instante." },
-        { t: "Inventario Teórico vs Real", d: "Cruza las ventas del POS contra el stock físico para detectar mermas o robo hormiga de inmediato." },
-        { t: "Control de Caja Chica", d: "Registro express desde el celular para gastos imprevistos de proveedores y servicios." }
-    ],
-        constructora: [
-            { t: "Captura en Campo", d: "Residente registra destajos desde su móvil." },
-            { t: "Validación Administrativa", d: "Oficina central aprueba costos en tiempo real." },
-            { t: "Reporte de Utilidad", d: "Cálculo automático de rentabilidad por obra." }
-        ],
-        logistica: [
-            { t: "Entrada de Pedido", d: "Sincronización automática con tu tienda o ERP." },
-            { t: "Optimización de Rutas", d: "Asignación inteligente a unidades de transporte." },
-            { t: "Confirmación de Entrega", d: "Captura de firma y foto con envío de PDF al cliente." }
-        ],
-        legal: [
-            { t: "Alta de Expediente", d: "Digitalización y mapeo de fechas críticas." },
-            { t: "Alertas Automáticas", d: "Aviso vía WhatsApp sobre términos legales por vencer." },
-            { t: "Generación de Escritos", d: "Plantillas inteligentes que se llenan con un clic." }
-        ]
-    };
-
-    function cambiarFlujo(tipo) {
-        const contenido = document.getElementById('contenidoFlujo');
-        const pasos = flujos[tipo];
-        
-        contenido.innerHTML = pasos.map((paso, i) => `
-            <div class="flex-1 text-center group">
-                <div class="w-12 h-12 bg-brandAccent/10 text-brandAccent border border-brandAccent/30 rounded-full flex items-center justify-center mx-auto mb-4 font-bold group-hover:bg-brandAccent group-hover:text-slate-900 transition-all">
-                    ${i + 1}
+                <div class="flex flex-wrap justify-center gap-4 mb-10">
+                    <button onclick="cambiarFlujo('constructora')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/8708647173257210735" class="w-6 h-6 object-contain grayscale group-hover:grayscale-0" alt="Constructora">
+                        Constructoras
+                    </button>
+                    <button onclick="cambiarFlujo('logistica')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/11482813430612964598" class="w-6 h-6 object-contain grayscale group-hover:grayscale-0" alt="Logística">
+                        Logística
+                    </button>
+                    <button onclick="cambiarFlujo('legal')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/1408324994696884132" class="w-6 h-6 object-contain grayscale group-hover:grayscale-0" alt="Legal">
+                        Despachos Legales
+                    </button>
+                    <button onclick="cambiarFlujo('restaurante')" class="group flex items-center gap-3 bg-slate-800 hover:bg-brandAccent/20 text-slate-300 hover:text-brandAccent px-6 py-3 rounded-full border border-slate-700 hover:border-brandAccent/50 transition-all font-medium">
+                        <span class="text-xl group-hover:scale-110 transition-transform">🍔</span>
+                        Restaurantes y Bares
+                    </button>
                 </div>
-                <h4 class="text-white font-bold text-sm mb-2">${paso.t}</h4>
-                <p class="text-slate-400 text-xs leading-relaxed">${paso.d}</p>
+
+                <div id="contenedorFlujo" class="bg-enterpriseCard p-8 rounded-2xl border border-slate-800 shadow-2xl relative overflow-hidden">
+                    <div id="contenidoFlujo" class="relative z-10 flex flex-col md:flex-row items-center justify-around gap-6">
+                        <p class="text-slate-500 animate-pulse">Selecciona un giro comercial para ver la arquitectura de su sistema...</p>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-brandAccent/5 to-transparent pointer-events-none"></div>
+                </div>
             </div>
-            ${i < pasos.length - 1 ? '<div class="hidden md:block text-slate-700 text-xl">→</div>' : ''}
-        `).join('');
-    }
-</script>
         </div>
     </section>
 
@@ -322,115 +266,167 @@
         <h2 class="text-3xl font-bold text-white">¿Listo para eliminar el caos en tu oficina?</h2>
         <p class="text-slate-400 mt-2 mb-8">Agenda una sesión de diagnóstico de 15 minutos sin costo. Analizamos tu archivo de Excel más pesado y te decimos cómo transformarlo en web.</p>
         
-       <form id="formContacto" class="space-y-6">
-    <div class="grid md:grid-cols-2 gap-6">
-        <div>
-            <label class="block text-xs font-mono text-slate-500 uppercase mb-2">Nombre Completo</label>
-            <input type="text" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Juan Pérez">
-        </div>
-        <div>
-            <label class="block text-xs font-mono text-slate-500 uppercase mb-2">WhatsApp de Negocios</label>
-            <input type="tel" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="+52 81 ...">
-        </div>
-    </div>
-    <div>
-        <label class="block text-xs font-mono text-slate-500 uppercase mb-2">Empresa / Giro</label>
-        <input type="text" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Ej. Transportes del Norte">
-    </div>
-    <div>
-        <label class="block text-xs font-mono text-slate-500 uppercase mb-2">¿Cuál es tu mayor cuello de botella?</label>
-        <textarea rows="4" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Ej. El control de inventarios en Excel es un caos..."></textarea>
-    </div>
-    <button type="submit" class="w-full bg-brandAccent hover:bg-sky-500 text-slate-900 font-bold py-4 rounded-lg transition-all shadow-lg shadow-brandAccent/20 flex items-center justify-center gap-2">
-        Enviar y Solicitar Diagnóstico 
-        <span class="text-xl">→</span>
-    </button>
-</form>
-    </section>
-<div id="modalDemo" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-500">
-    
-    <div class="bg-enterpriseCard w-full max-w-lg rounded-2xl border border-slate-700 shadow-2xl relative overflow-hidden transform scale-90 transition-transform duration-500" id="modalTarjeta">
-        
-        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brandAccent via-blue-400 to-brandAccent"></div>
-        
-        <button onclick="cerrarModalDemo()" class="absolute top-4 right-4 text-slate-500 hover:text-white text-xl p-1 transition-colors">
-            &times;
-        </button>
-        
-        <div class="p-8">
-            <div class="flex items-center gap-4 mb-6">
-                <div class="w-16 h-16 bg-slate-900/60 rounded-xl border border-slate-700 flex items-center justify-center p-2">
-                    <img id="modalIcono" src="" alt="Icono Demo" class="w-12 h-12 object-contain grayscale opacity-60">
+        <form id="formContacto" class="space-y-6 text-left">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs font-mono text-slate-500 uppercase mb-2">Nombre Completo</label>
+                    <input type="text" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Juan Pérez">
                 </div>
                 <div>
-                    <span class="text-xs text-brandAccent font-mono tracking-widest uppercase mb-1 block">Fase de Integración</span>
-                    <h2 id="modalTitulo" class="text-2xl font-extrabold text-white tracking-tight"></h2>
+                    <label class="block text-xs font-mono text-slate-500 uppercase mb-2">WhatsApp de Negocios</label>
+                    <input type="tel" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="+52 81 ...">
                 </div>
             </div>
-            
-            <p id="modalDescripcion" class="text-slate-400 text-sm leading-relaxed mb-6"></p>
-            
-            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-6">
-    <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 block mb-2">Impacto Operativo Estimado</span>
-    <div class="grid grid-cols-2 gap-4">
-        <div class="border-r border-slate-800 pr-2">
-            <div class="text-xs text-slate-400">Tiempo de proceso</div>
-            <div class="text-lg font-bold text-brandAccent flex items-center gap-1">
-                De 3 días <span class="text-xs font-normal text-slate-500">a</span> 5 min
+            <div>
+                <label class="block text-xs font-mono text-slate-500 uppercase mb-2">Empresa / Giro</label>
+                <input type="text" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Ej. Transportes del Norte">
             </div>
-        </div>
-        <div>
-            <div class="text-xs text-slate-400">Margen de Error</div>
-            <div class="text-lg font-bold text-emerald-400">
-                0% <span class="text-xs font-normal text-slate-500">(Blindado)</span>
+            <div>
+                <label class="block text-xs font-mono text-slate-500 uppercase mb-2">¿Cuál es tu mayor cuello de botella?</label>
+                <textarea rows="4" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-brandAccent outline-none transition-all" placeholder="Ej. El control de inventarios en Excel es un caos..."></textarea>
             </div>
-        </div>
-    </div>
-</div>
-            
-            <button onclick="cerrarModalDemo()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 rounded-lg transition-colors border border-slate-700">
-                Entendido.
+            <button type="submit" class="w-full bg-brandAccent hover:bg-sky-500 text-slate-900 font-bold py-4 rounded-lg transition-all shadow-lg shadow-brandAccent/20 flex items-center justify-center gap-2">
+                Enviar y Solicitar Diagnóstico 
+                <span class="text-xl">→</span>
             </button>
+        </form>
+    </section>
+
+    <div id="modalDemo" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-500">
+        <div class="bg-enterpriseCard w-full max-w-lg rounded-2xl border border-slate-700 shadow-2xl relative overflow-hidden transform scale-90 transition-transform duration-500" id="modalTarjeta">
+            
+            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brandAccent via-blue-400 to-brandAccent"></div>
+            
+            <button onclick="cerrarModalDemo()" class="absolute top-4 right-4 text-slate-500 hover:text-white text-xl p-1 transition-colors">
+                &times;
+            </button>
+            
+            <div class="p-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-slate-900/60 rounded-xl border border-slate-700 flex items-center justify-center p-2">
+                        <img id="modalIcono" src="" alt="Icono Demo" class="w-12 h-12 object-contain grayscale opacity-60">
+                    </div>
+                    <div>
+                        <span class="text-xs text-brandAccent font-mono tracking-widest uppercase mb-1 block">Fase de Integración</span>
+                        <h2 id="modalTitulo" class="text-2xl font-extrabold text-white tracking-tight"></h2>
+                    </div>
+                </div>
+                
+                <p id="modalDescripcion" class="text-slate-400 text-sm leading-relaxed mb-6"></p>
+                
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-6">
+                    <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 block mb-2">Impacto Operativo Estimado</span>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="border-r border-slate-800 pr-2">
+                            <div class="text-xs text-slate-400">Tiempo de proceso</div>
+                            <div class="text-lg font-bold text-brandAccent flex items-center gap-1">
+                                De 3 días <span class="text-xs font-normal text-slate-500">a</span> 5 min
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Margen de Error</div>
+                            <div class="text-lg font-bold text-emerald-400">
+                                0% <span class="text-xs font-normal text-slate-500">(Blindado)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="cerrarModalDemo()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 rounded-lg transition-colors border border-slate-700">
+                    Entendido.
+                </button>
+            </div>
+            
+            <div class="absolute inset-0 bg-gradient-to-b from-brandAccent/5 to-transparent pointer-events-none"></div>
         </div>
-        
-        <div class="absolute inset-0 bg-gradient-to-b from-brandAccent/5 to-transparent pointer-events-none"></div>
     </div>
-</div>
 
-<script>
-    function abrirModalDemo(titulo, descripcion, urlIcono) {
-        const modal = document.getElementById('modalDemo');
-        const tarjeta = document.getElementById('modalTarjeta');
-        
-        // Rellenar datos
-        document.getElementById('modalTitulo').textContent = titulo;
-        document.getElementById('modalDescripcion').textContent = descripcion;
-        document.getElementById('modalIcono').src = urlIcono;
-        
-        // Mostrar Modal (Fade-in + Scale-up)
-        modal.classList.remove('opacity-0', 'pointer-events-none');
-        modal.classList.add('opacity-100');
-        tarjeta.classList.remove('scale-90');
-        tarjeta.classList.add('scale-100');
-    }
-
-    function cerrarModalDemo() {
-        const modal = document.getElementById('modalDemo');
-        const tarjeta = document.getElementById('modalTarjeta');
-        
-        // Ocultar Modal (Fade-out + Scale-down)
-        modal.classList.remove('opacity-100');
-        modal.classList.add('opacity-0', 'pointer-events-none');
-        tarjeta.classList.remove('scale-100');
-        tarjeta.classList.add('scale-90');
-    }
-
-    // Cerrar si se hace clic fuera de la tarjeta
-    document.getElementById('modalDemo').addEventListener('click', function(e) {
-        if (e.target === this) {
-            cerrarModalDemo();
+    <script>
+        // Lógica para filtro de búsqueda en demo
+        function simularFiltro() {
+            const input = document.getElementById('buscarTramite').value.toLowerCase();
+            const filas = document.querySelectorAll('#tablaTramites tr');
+            
+            filas.forEach(fila => {
+                const textoFila = fila.textContent.toLowerCase();
+                if(textoFila.includes(input)) {
+                    fila.style.display = "";
+                } else {
+                    fila.style.display = "none";
+                }
+            });
         }
-    });
-</script>
+
+        // Lógica del Simulador de Giros
+        const flujos = {
+            restaurante: [
+                { t: "Costeo de Recetas", d: "Actualiza el precio de un insumo en Sheets y ve el impacto en tu margen de ganancia al instante." },
+                { t: "Inventario Teórico vs Real", d: "Cruza las ventas del POS contra el stock físico para detectar mermas o robo hormiga de inmediato." },
+                { t: "Control de Caja Chica", d: "Registro express desde el celular para gastos imprevistos de proveedores y servicios." }
+            ],
+            constructora: [
+                { t: "Captura en Campo", d: "Residente registra destajos desde su móvil." },
+                { t: "Validación Administrativa", d: "Oficina central aprueba costos en tiempo real." },
+                { t: "Reporte de Utilidad", d: "Cálculo automático de rentabilidad por obra." }
+            ],
+            logistica: [
+                { t: "Entrada de Pedido", d: "Sincronización automática con tu tienda o ERP." },
+                { t: "Optimización de Rutas", d: "Asignación inteligente a unidades de transporte." },
+                { t: "Confirmación de Entrega", d: "Captura de firma y foto con envío de PDF al cliente." }
+            ],
+            legal: [
+                { t: "Alta de Expediente", d: "Digitalización y mapeo de fechas críticas." },
+                { t: "Alertas Automáticas", d: "Aviso vía WhatsApp sobre términos legales por vencer." },
+                { t: "Generación de Escritos", d: "Plantillas inteligentes que se llenan con un clic." }
+            ]
+        };
+
+        function cambiarFlujo(tipo) {
+            const contenido = document.getElementById('contenidoFlujo');
+            const pasos = flujos[tipo];
+            
+            contenido.innerHTML = pasos.map((paso, i) => `
+                <div class="flex-1 text-center group">
+                    <div class="w-12 h-12 bg-brandAccent/10 text-brandAccent border border-brandAccent/30 rounded-full flex items-center justify-center mx-auto mb-4 font-bold group-hover:bg-brandAccent group-hover:text-slate-900 transition-all">
+                        ${i + 1}
+                    </div>
+                    <h4 class="text-white font-bold text-sm mb-2">${paso.t}</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">${paso.d}</p>
+                </div>
+                ${i < pasos.length - 1 ? '<div class="hidden md:block text-slate-700 text-xl">→</div>' : ''}
+            `).join('');
+        }
+
+        // Lógica de la Ventana Modal
+        function abrirModalDemo(titulo, descripcion, urlIcono) {
+            const modal = document.getElementById('modalDemo');
+            const tarjeta = document.getElementById('modalTarjeta');
+            
+            document.getElementById('modalTitulo').textContent = titulo;
+            document.getElementById('modalDescripcion').textContent = descripcion;
+            document.getElementById('modalIcono').src = urlIcono;
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+            tarjeta.classList.remove('scale-90');
+            tarjeta.classList.add('scale-100');
+        }
+
+        function cerrarModalDemo() {
+            const modal = document.getElementById('modalDemo');
+            const tarjeta = document.getElementById('modalTarjeta');
+            
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            tarjeta.classList.remove('scale-100');
+            tarjeta.classList.add('scale-90');
+        }
+
+        document.getElementById('modalDemo').addEventListener('click', function(e) {
+            if (e.target === this) {
+                cerrarModalDemo();
+            }
+        });
+    </script>
 </body>
 </html>
